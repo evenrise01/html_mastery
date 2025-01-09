@@ -1,0 +1,27 @@
+
+
+.box1{
+    background-color: aqua;
+    padding: 20px;
+    border: 20px solid violet;
+    margin: 20px
+
+}
+.box2{
+    background-color: tomato;
+    padding: 20px;
+    border: 20px solid violet;
+    margin: 20px
+}
+.box3{
+    background-color: lime;
+    padding: 20px;
+    border: 20px solid violet;
+    margin: 20px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

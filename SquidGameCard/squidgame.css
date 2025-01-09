@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Game Of Squids';
+    src: url('fonts/Game Of Squids.ttf') format('truetype'); /* Adjust path if needed */
+    font-weight: normal;
+    font-style: normal;
+  }
+  body {
+    font-family: 'Game Of Squids', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1e1e1e;
+  }
+  
+  h1 {
+    font-family: 'Game Of Squids', serif;
+    color: #f44786;
+  }
+
+  .card-container {
+    perspective: 1000px; /* Enables the 3D effect */
+  }
+
+  .card{
+    width: 600px;
+    height: 400px;
+    background: linear-gradient(145deg,#282828,#121212);
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px #000, -5px -5px 15px #3a3a3a;
+    transform-style: preserve-3d;
+    transition: 0.8s;
+    cursor: pointer;
+    position: relative;
+  }
+  .card-front p,
+  .card-back p {
+    position: absolute;
+    bottom: 10px; /* Adjust spacing as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .card-front,.card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #333, #1a1a1a, #444, #222);
+    background-size: 400% 400%;
+    animation: holographic 5s infinite;
+  }
+
+  @keyframes holographic {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .card-front {
+    background: linear-gradient(145deg, #333333, #1a1a1a);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #444;
+  }
+  
+  /* Back Side Styling */
+  .card-back {
+    background: linear-gradient(145deg, #1a1a1a, #333333);
+    color: #fff;
+    transform: rotateY(180deg);
+    border: 2px solid #444;
+  }
+  
+  /* Symbols on the Back */
+.symbols {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+  }
+  
+  .symbols div {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(145deg, #ED1B76, #f44786);
+    box-shadow: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .symbols div:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px #ED1B76, 0 0 40px rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Individual Symbols */
+  .circle {
+    border-radius: 50%;
+  }
+  
+  .triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  
+  .square {
+    border-radius: 5px;
+  }
+  
+  /* Card Flip Effect */
+  .card-container:hover .card {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px #ED1B76;
+  }
